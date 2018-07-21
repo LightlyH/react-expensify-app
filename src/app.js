@@ -11,6 +11,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { firebase } from './firebase/firebase';
 // import './playground/promises';
+import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
 
@@ -43,7 +44,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {

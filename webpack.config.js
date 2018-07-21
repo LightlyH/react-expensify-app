@@ -15,7 +15,7 @@ module.exports = env => { // export a function instead of an object
     const CSSExtract = new ExtractTextPlugin('styles.css');
 
     return {
-        entry: './src/app.js',
+        entry: ['babel-polyfill', './src/app.js'], // add babel-polyfill to support includes() over all browsers
         output: {
             path: path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'
